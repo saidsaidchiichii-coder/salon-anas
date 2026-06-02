@@ -122,4 +122,56 @@ const CONFIG = {
     if (layer1) layer1.style.transform = `translateY(${y * 0.15}px)`;
     if (layer2) layer2.style.transform = `translateY(${y * -0.1}px)`;
   }, { passive: true });
+
+  /* =====================================================================
+     3D SCROLL & INTERACTIVE MOUSE TILT GALLERY SCRIPT
+     ===================================================================== */
+  const galleryCards = document.querySelectorAll('.gallery-card');
+  const onGalleryScroll = () => {
+    const viewCenter = window.innerHeight / 2;
+    galleryCards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.top + rect.height / 2;
+      
+      // Normalized distance from center of viewport (-1 to 1)
+      let dist = (cardCenter - viewCenter) / (window.innerHeight / 2);
+      dist = Math.max(-1.2, Math.min(1.2, dist)); // Clamp with slight overflow
+      
+      // Calculation of 3D rotations based on scroll distance
+      const rotateX = dist * -22;   // Rotation on X-axis (tilts backward as we scroll down)
+      const rotateY = dist * 12;    // Rotation on Y-axis (slight slant)
+      const translateZ = (1 - Math.abs(dist)) * 60; // Pops forward when in center of viewport!
+      const scale = 0.88 + (1 - Math.abs(dist)) * 0.12; // Zoom in as it centers
+      const opacity = 0.45 + (1 - Math.abs(dist)) * 0.55; // Fade as it leaves center
+      
+      // Apply the computed perspective matrix
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(${translateZ}px) scale(${scale})`;
+      card.style.opacity = opacity;
+    });
+  };
+  window.addEventListener('scroll', onGalleryScroll, { passive: true });
+  onGalleryScroll();
+
+  // Mouse Tilt 3D Effect for Gallery Cards on Hover
+  galleryCards.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      // Temporarily disable scroll transform so mouse tilt works
+      window.removeEventListener('scroll', onGalleryScroll);
+      
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width;
+      const py = (e.clientY - r.top) / r.height;
+      const tiltX = (0.5 - py) * 24; // Deeper tilt on X
+      const tiltY = (px - 0.5) * 24; // Deeper tilt on Y
+      
+      card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(80px) scale(1.05)`;
+      card.style.opacity = '1';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      // Re-enable scroll listener and restore state
+      window.addEventListener('scroll', onGalleryScroll, { passive: true });
+      onGalleryScroll();
+    });
+  });
 })();
