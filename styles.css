@@ -191,3 +191,187 @@ em{ color:var(--gold); font-style:normal; }
     background:rgba(12,12,15,.96); padding:1.4rem 2rem; gap:1.1rem; border-bottom:1px solid var(--line);
   }
 }
+
+
+/* =====================================================================
+   3D GALLERY & CHROMATIC ENHANCEMENTS BY MOHA'S ASSISTANT
+   ===================================================================== */
+
+:root {
+  --gold-glow: rgba(212, 175, 55, 0.45);
+  --neon-glow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 40px rgba(212, 175, 55, 0.15);
+}
+
+/* Vibrant gold text highlight glow */
+em {
+  color: var(--gold-soft);
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Extra 3D Lift on Navbar brand and links */
+.brand:hover {
+  transform: translateZ(30px) scale(1.05);
+  text-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* 3D Glassmorphism Cards for Hero and About Sections */
+.hero-card {
+  background: rgba(26, 26, 34, 0.75);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem;
+  transform: translateZ(60px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-card:hover {
+  transform: translateZ(80px) scale(1.01);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+/* Enhanced 3D buttons */
+.btn-primary {
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px) translateZ(15px) scale(1.04);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.45), 0 0 25px rgba(212, 175, 55, 0.25);
+}
+
+/* 3D Gallery Section Styles */
+.gallery {
+  padding: 8rem 1.5rem;
+  background: radial-gradient(circle at 50% 50%, #111116 0%, #0c0c0f 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery .section-title {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-container {
+  max-width: var(--maxw);
+  margin: 4rem auto 0;
+  perspective: 1500px; /* Strong depth projection */
+}
+
+.gallery-3d-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  transform-style: preserve-3d;
+  padding: 2rem 0;
+}
+
+/* 3D Gallery Card with scroll rotation capabilities */
+.gallery-card {
+  height: 480px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  background: #161620;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, opacity 0.3s ease-out, border-color 0.4s, box-shadow 0.4s;
+  will-change: transform, opacity;
+}
+
+.gallery-card:hover {
+  border-color: var(--gold-soft);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+.gallery-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.gallery-card-front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s;
+  filter: brightness(0.8) contrast(1.1);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.12) translateZ(10px);
+  filter: brightness(0.95) contrast(1.15);
+}
+
+/* Card Information Overlay with 3D Pop Out */
+.gallery-card-info {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 1.8rem 1.8rem;
+  background: linear-gradient(to top, rgba(12, 12, 15, 0.98) 0%, rgba(12, 12, 15, 0.6) 60%, transparent 100%);
+  transform: translateZ(45px); /* Creates absolute floating effect for text! */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-card:hover .gallery-card-info {
+  transform: translateZ(65px);
+}
+
+.gallery-card-info h3 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-card-info p {
+  font-size: 0.95rem;
+  color: var(--gold-soft);
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Extra 3D glow styling for services cards */
+.card {
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover {
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+/* Background scene neon gold sparkles */
+.bg-scene::after {
+  content: '';
+  position: absolute;
+  width: 150vw;
+  height: 150vh;
+  top: -25%;
+  left: -25%;
+  background-image: radial-gradient(circle, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.6;
+  pointer-events: none;
+  transform: rotate(15deg);
+}
