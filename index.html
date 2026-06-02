@@ -29,6 +29,7 @@
     <nav class="nav-links">
       <a href="#about">من نحن</a>
       <a href="#services">الخدمات</a>
+      <a href="#gallery">معرض الأعمال</a>
       <a href="#hours">أوقات العمل</a>
       <a href="#booking">الحجز</a>
       <a href="#contact">اتصل بنا</a>
@@ -82,6 +83,91 @@
     </div>
     <div class="cards" id="serviceCards">
       <!-- cards injected by app.js (data-driven, easy to edit) -->
+    </div>
+  </section>
+
+  <!-- Gallery (3D Scroll & Mouse Tilt) -->
+  <section class="section gallery" id="gallery">
+    <div class="reveal" data-anim="fade-up">
+      <span class="tag">معرض الأعمال</span>
+      <h2 class="section-title">معرض <em>إبداعاتنا</em></h2>
+      <p class="lead">شاهد مقتطفات من تسريحاتنا وأعمالنا العصرية وتصميم صالوننا المبتكر في فضاء ثلاثي الأبعاد تفاعلي.</p>
+    </div>
+    <div class="gallery-container">
+      <div class="gallery-3d-grid" id="galleryGrid">
+        <!-- 3D Gallery Card 1 -->
+        <div class="gallery-card reveal" data-anim="zoom" style="--d: 0.1s">
+          <div class="gallery-card-inner">
+            <div class="gallery-card-front">
+              <img src="images/hair1.jpeg" alt="قص وتدريج احترافي" loading="lazy" />
+              <div class="gallery-card-info">
+                <h3>قص وتدريج احترافي</h3>
+                <p>لمسة عصرية تناسب ملامحك</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3D Gallery Card 2 -->
+        <div class="gallery-card reveal" data-anim="zoom" style="--d: 0.2s">
+          <div class="gallery-card-inner">
+            <div class="gallery-card-front">
+              <img src="images/hair2.jpeg" alt="تمويج كلاسيكي" loading="lazy" />
+              <div class="gallery-card-info">
+                <h3>تمويج كلاسيكي (Wavy)</h3>
+                <p>تصفيف شعر جذاب ومنسق</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3D Gallery Card 3 -->
+        <div class="gallery-card reveal" data-anim="zoom" style="--d: 0.3s">
+          <div class="gallery-card-inner">
+            <div class="gallery-card-front">
+              <img src="images/hair3.jpeg" alt="شعر أملس وانسيابي" loading="lazy" />
+              <div class="gallery-card-info">
+                <h3>شعر أملس وانسيابي</h3>
+                <p>تسريح فائق النعومة واللمعان</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3D Gallery Card 4 -->
+        <div class="gallery-card reveal" data-anim="zoom" style="--d: 0.4s">
+          <div class="gallery-card-inner">
+            <div class="gallery-card-front">
+              <img src="images/salon1.jpeg" alt="فضاء الصالون الراقي" loading="lazy" />
+              <div class="gallery-card-info">
+                <h3>فضاء الصالون الراقي</h3>
+                <p>راحة تامة وتجربة استرخاء فاخرة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3D Gallery Card 5 -->
+        <div class="gallery-card reveal" data-anim="zoom" style="--d: 0.5s">
+          <div class="gallery-card-inner">
+            <div class="gallery-card-front">
+              <img src="images/hair4.jpeg" alt="تلوين وخصلات شقراء" loading="lazy" />
+              <div class="gallery-card-info">
+                <h3>خصلات شقراء (Balayage)</h3>
+                <p>دمج ألوان احترافي ومشرق</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3D Gallery Card 6 -->
+        <div class="gallery-card reveal" data-anim="zoom" style="--d: 0.6s">
+          <div class="gallery-card-inner">
+            <div class="gallery-card-front">
+              <img src="images/hair5.jpeg" alt="خصلات بلوند مموجة" loading="lazy" />
+              <div class="gallery-card-info">
+                <h3>خصلات بلوند مموجة</h3>
+                <p>تسريحة مفعمة بالحيوية والحركة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
