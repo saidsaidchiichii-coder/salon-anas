@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salon Chez Anas — صالون الحلاقة</title>
+  <meta name="description" content="صالون حلاقة رجالي احترافي — حلاقة، تهذيب اللحية، عناية كاملة. احجز موعدك الآن عبر واتساب." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Animated 3D background layers -->
+  <div class="bg-scene" aria-hidden="true">
+    <div class="bg-layer layer-1"></div>
+    <div class="bg-layer layer-2"></div>
+    <div class="bg-layer layer-3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <a href="#hero" class="brand">
+      <span class="brand-mark">✂</span>
+      <span class="brand-name" data-field="name">Salon Chez Anas</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">من نحن</a>
+      <a href="#services">الخدمات</a>
+      <a href="#hours">أوقات العمل</a>
+      <a href="#booking">الحجز</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+    <a class="nav-cta" data-field="whatsapp-link" href="#booking">احجز الآن</a>
+    <button class="burger" id="burger" aria-label="القائمة"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-3d" id="hero3d">
+      <div class="hero-card">
+        <p class="hero-eyebrow">صالون حلاقة رجالي • احترافي</p>
+        <h1 class="hero-title">
+          <span class="line">أناقتك</span>
+          <span class="line accent" data-field="name">Salon Chez Anas</span>
+          <span class="line">تبدأ من هنا</span>
+        </h1>
+        <p class="hero-sub">حلاقة عصرية • تهذيب اللحية • عناية كاملة بأيدي محترفين</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" data-field="whatsapp-link" href="#booking">📅 احجز موعدك</a>
+          <a class="btn btn-ghost" href="#services">اكتشف خدماتنا</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint"><span></span>اسحب للأسفل</div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <div class="reveal" data-anim="fade-up">
+      <span class="tag">من نحن</span>
+      <h2 class="section-title">تجربة حلاقة <em>لا تُنسى</em></h2>
+      <p class="lead">
+        فصالوننا، كنجمعو بين الإتقان التقليدي واللمسة العصرية. كل زبون عندو الأولوية،
+        وكنضمنو ليك راحة، نظافة، ونتيجة على ذوقك. مرحبا بيك ديما.
+      </p>
+    </div>
+    <div class="about-stats">
+      <div class="stat reveal" data-anim="zoom"><b>+5</b><span>سنوات خبرة</span></div>
+      <div class="stat reveal" data-anim="zoom" style="--d:.1s"><b>+2000</b><span>زبون راضي</span></div>
+      <div class="stat reveal" data-anim="zoom" style="--d:.2s"><b>100%</b><span>نظافة وتعقيم</span></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section services" id="services">
+    <div class="reveal" data-anim="fade-up">
+      <span class="tag">الخدمات</span>
+      <h2 class="section-title">واش كنوفرو ليك</h2>
+    </div>
+    <div class="cards" id="serviceCards">
+      <!-- cards injected by app.js (data-driven, easy to edit) -->
+    </div>
+  </section>
+
+  <!-- Hours -->
+  <section class="section hours" id="hours">
+    <div class="hours-card reveal" data-anim="flip">
+      <span class="tag">أوقات العمل</span>
+      <h2 class="section-title">إحنا فالخدمة</h2>
+      <div class="hours-clock">
+        <div class="clock-face">
+          <div class="hand hour"></div>
+          <div class="hand minute"></div>
+          <div class="center-dot"></div>
+        </div>
+      </div>
+      <p class="hours-time">
+        <span data-field="hours-open">11:00</span>
+        <span class="dash">—</span>
+        <span data-field="hours-close">20:30</span>
+      </p>
+      <p class="hours-note" data-field="hours-days">من الاثنين إلى السبت</p>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="section booking" id="booking">
+    <div class="booking-inner reveal" data-anim="fade-up">
+      <span class="tag">الحجز</span>
+      <h2 class="section-title">احجز موعدك بسهولة</h2>
+      <p class="lead">ضغط على الزر وغادي تتواصل مباشرة معانا عبر واتساب لتحديد الموعد المناسب ليك.</p>
+      <a class="btn btn-whatsapp" data-field="whatsapp-link" href="#">
+        <span class="wa-icon">🟢</span> احجز عبر واتساب
+      </a>
+      <p class="phone-line">أو اتصل بنا: <a data-field="phone-link" href="tel:+212668510690"><b data-field="phone">+212 668-510690</b></a></p>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-grid">
+      <div class="reveal" data-anim="fade-up">
+        <h3 class="footer-brand"><span class="brand-mark">✂</span> <span data-field="name">Salon Chez Anas</span></h3>
+        <p>صالون حلاقة رجالي احترافي. أناقتك مسؤوليتنا.</p>
+      </div>
+      <div class="reveal" data-anim="fade-up" style="--d:.1s">
+        <h4>تواصل</h4>
+        <p>📞 <a data-field="phone-link" href="tel:+212668510690"><span data-field="phone">+212 668-510690</span></a></p>
+        <p>🕒 <span data-field="hours-open">11:00</span> — <span data-field="hours-close">20:30</span></p>
+      </div>
+      <div class="reveal" data-anim="fade-up" style="--d:.2s">
+        <h4>روابط</h4>
+        <p><a href="#services">الخدمات</a></p>
+        <p><a href="#booking">الحجز</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> <span data-field="name">Salon Chez Anas</span> — جميع الحقوق محفوظة</span>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="fab-whatsapp" data-field="whatsapp-link" href="#" aria-label="واتساب">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.515 5.26l-.999 3.648 3.973-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
